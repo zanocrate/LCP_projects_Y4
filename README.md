@@ -4,7 +4,20 @@ Per prima cosa clonate il repository:
 ```
 git clone https://github.com/zanocrate/LCP_projects_Y4.git
 ```
-Questo creerà una cartella `LCP_projects_Y4` nella directory dove avete eseguito questo comando. Entrandoci con `cd LCP_projects_Y4`, prima di mettervi al lavoro e fare qualsiasi cosa fate
+Questo creerà una cartella `LCP_projects_Y4` nella directory dove avete eseguito questo comando. 
+Dopodichè eseguite questi comandi:
+```
+cd LCP_projects_Y4
+cd .git
+nano config
+```
+E dove c'è `[remote "origin"]`, modificate la voce `url` in modo che includa il vostro Personal Accesso Token, ossia
+```
+url = https://<TOKEN>@github.com/zanocrate/LCP_projects_Y4.git
+```
+
+## Workflow
+Prima di mettervi al lavoro e fare qualsiasi cosa, una volta dentro alla cartella `LCP_projects_Y4` fate
 ```
 git fetch origin
 git merge
@@ -16,12 +29,3 @@ Così sarete aggiornati all'ultimo commit che è stato fatto, visto che non lavo
 git commit -m "commento al commit"
 git push origin
 ```
-A questo punto vi chiederà le credenziali per poter eseguire il push, inserite il vostro account di github e dovrebbe funzionare.
-Se volete evitare di inserire le credenziali ogni volta, vi basta eseguire questo comando prima del push:
-
-```
-git config credential.helper store
-git push origin
-```
-
-Questo salverà le vostre credenziali *in chiaro* localmente in un file chiamato `.git-credentials`.
